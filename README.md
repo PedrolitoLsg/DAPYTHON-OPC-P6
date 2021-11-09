@@ -14,7 +14,7 @@ https://github.com/OpenClassrooms-Student-Center/OCMovies-API-EN-FR
 
 * The overall goal is to mimic the Netflix Desktop/TV interface with:
 
-* A modal in vanilla Javascript is used to open an info bubble when hovering over a film as well as a lateral scroll to display other films of a category.
+* A modal in vanilla Javascript is used to open an info bubble when hovering over a movie as well as a lateral scroll to display other movies of a category.
 * Data is managed through Javascript functions
 * CSS is used for styling
 * HTML as data container
