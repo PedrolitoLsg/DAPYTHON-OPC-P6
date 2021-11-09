@@ -27,4 +27,3 @@ Git clone this repo
 ## How to use
 Launch the document interface.html with a web browser
 
-## Acknowledgments
