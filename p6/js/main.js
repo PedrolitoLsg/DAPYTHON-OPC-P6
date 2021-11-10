@@ -1,4 +1,4 @@
-//import les functions et variables de variables.js et functions.js 
+
 // Définition des constantes url de l'API
 const MAIN_URL = "http://localhost:8000/api/v1/titles";
 const MAIN_UL_2 = "http://localhost:8000/api/v1/titles/?page=2";
@@ -8,17 +8,12 @@ const ALL_BY_SCORE_2 = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score
 
 const URL_RECENT = "http://localhost:8000/api/v1/titles/?sort_by=-year";
 const URL_RECENT_2 = "http://localhost:8000/api/v1/titles/?sort_by=-year&page=2";
-//URL_RECENT.forEach(elem => getMostRecent(elem));
 
 const URL_WORST = "http://localhost:8000/api/v1/titles/?sort_by=-imdb_score";
 const URL_WORST_2 = "http://localhost:8000/api/v1/titles/?sort_by=imdb_score&page=2";;
 
 const URL_BEST_MUSIC = "http://localhost:8000/api/v1/titles/?genre=Music&sort_by=-imdb_score";
 const URL_BEST_MUSIC_2 = "http://localhost:8000/api/v1/titles/?genre=Music&page=2&sort_by=-imdb_score";
-
-//Fonction Globale
-// Put Data In Modales.
-// Fonction globale à appeler avec un positionnement ainsi qu'un numéro id pour retrieve les data
 
 // Fonction lancée par modalfunctionalities(x) permettant de mettre les données dans la modale suite à un click sur une jaquette de film
 async function putdatainmodal(x) {
@@ -75,12 +70,8 @@ async function putdatainmodal(x) {
 async function modalfunctionalities(x) {
     //Création de la modale
     let modalBtn = document.getElementById(String("modal-btn-"+x));
-    //let modalBtn = document.getElementById(String("modal-btn-"+x));
     let modal = document.querySelector(".modal");
-    //modal.style.display = "block";
-    //let modal = document.getElementById(String("modal-"+x));
     let closeBtn = document.querySelector(".close-btn");
-    //let closeBtn = document.getElementById(String("close-btn-"+x));
     modalBtn.onclick = function (){
         putdatainmodal(x)
         modal.style.display = "block";
@@ -113,16 +104,12 @@ async function createcarouselbuttons(category) {
     let imgpre = document.createElement("img");
     imgpre.alt = "previous";
     imgpre.src = "img/redarrowleft.jpg"
-    //buttonprevious.innerHTML = "previous";
-    
     let buttonnext = document.createElement("div");
     buttonnext.className = "carousel-button-next";
     let btnnext = document.createElement("btn");
     let imgnext = document.createElement("img");
     imgnext.alt = "next";
     imgnext.src = "img/redarrowright.jpg";
-    //let contentnext = document.createElement("img");
-    //contentnext.src = "img/btnnext.PNG";
     document.getElementById(category).prepend(buttonprevious);
     buttonprevious.appendChild(btnpre);
     btnpre.appendChild(imgpre);
@@ -278,8 +265,7 @@ async function getBestMovies2() {
 
 
 
-// Fonction pour les meilleurs recent movies
-// définition de la fonction permettant d'avoir les 7 autres meilleurs films 
+// Fonction pour les recent movies
 getRecent1()
     .then(response => {
         console.log('Most Recent 1 Retrieved');
@@ -299,10 +285,6 @@ async function getRecent1() {
         let movie_data = data.results[i];
         // creation de la var url img a retrieve
         let imgUrl = movie_data.image_url;
-        //create <img> element
-        //création de la div modale
-        //création du bouton à insérer dans la modale
-        //create carousel
         let carouselItem = document.createElement("div");
         carouselItem.className = "carousel__item";
         //fin de la création du carousel
@@ -338,8 +320,6 @@ async function getRecent2() {
         let movie_data = data.results[i];
         // creation de la var url img a retrieve
         let imgUrl = movie_data.image_url;
-        //create <img> element
-        //création de la div modale
         //création du bouton à insérer dans la modale
         let carouselItem = document.createElement("div");
         carouselItem.className = "carousel__item";
@@ -414,9 +394,6 @@ async function getWorst2() {
         let movie_data = data.results[i];
         // creation de la var url img a retrieve
         let imgUrl = movie_data.image_url;
-        //create <img> element
-        //création de la div modale
-        //création du bouton à insérer dans la modale
         let carouselItem = document.createElement("div");
         carouselItem.className = "carousel__item";
         let btn = document.createElement("button");
@@ -491,9 +468,6 @@ async function getMusic2() {
         let movie_data = data.results[i];
         // creation de la var url img a retrieve
         let imgUrl = movie_data.image_url;
-        //create <img> element
-        //création de la div modale
-        //création du bouton à insérer dans la modale
         let carouselItem = document.createElement("div");
         carouselItem.className = "carousel__item";
         let btn = document.createElement("button");
